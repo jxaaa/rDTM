@@ -16,7 +16,8 @@
 #' @return A json file or dataframe.
 #' @export
 #'
-#' @examples countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe = TRUE)
+#' @examples
+#' countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =T)
 countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "", fromDate = NULL, toDate = NULL,
                              monthFrom_month = NULL, monthFrom_year = NULL, monthTo_month = NULL,
                              monthTo_year = NULL, roundFrom = NULL, roundTo = NULL, to_dataframe = FALSE) {
