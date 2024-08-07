@@ -51,5 +51,5 @@ A json file or dataframe.
 Global IDP Data Country Level
 }
 \examples{
-countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe = TRUE)
+countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =TRUE)
 }
