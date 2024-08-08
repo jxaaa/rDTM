@@ -22,10 +22,10 @@
 #'
 #' @examples
 #' #Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to May 2024, and convert output as dataframe.
-#' countryLevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+#' result1 <- countryLevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
 #'
 #' #Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to Dec 2023, and output as JSON.
-#' countryLevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =FALSE)
+#' result2 <- countryLevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =FALSE)
 
 
 countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "", fromDate = NULL, toDate = NULL,
@@ -38,16 +38,16 @@ countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "",
   if (countryName != "" && admin0Pcode != "") {
     stop("Please provide either the countryName or the admin0Pcode, not both")
   }
-  if (is.null(monthFrom_month)) {
+  if (is.null(monthFrom_month) | !is.character(monthFrom_month)) {
     stop("Please provide the start month of the reporting period (str)")
   }
-  if (is.null(monthFrom_year)) {
+  if (is.null(monthFrom_year) | !is.integer(monthFrom_year)) {
     stop("Please provide the start year of the reporting period (int)")
   }
-  if (is.null(monthTo_month)) {
+  if (is.null(monthTo_month) | !is.character(monthTo_month)) {
     stop("Please provide the end month of the reporting period (str)")
   }
-  if (is.null(monthTo_year)) {
+  if (is.null(monthTo_year) | !is.integer(monthTo_year)) {
     stop("Please provide the end year of the reporting period (int)")
   }
   # The URL for getting admin0 data
