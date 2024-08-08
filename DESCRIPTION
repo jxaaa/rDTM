@@ -1,10 +1,9 @@
 Package: rDTM
 Title: A package retrieving data from IOM's DTM API
-Version: 0.0.0.9000
+Version: 1.0.0.0000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: Retrieve data from IOM's DTM API..
+    person("Xian", "Ji", , "xian.ji@un.org", role = c("aut", "cre"))
+Description: A easy way to retrieve data from IOM's DTM API in R.The DTM API shares data stored at the country, Admin 1 (states, provinces or equivalent) and Admin 2 (smaller subnational administrative areas) levels.(countryLevelData(), admin1LevelData(), admin2LevelData())
 License: MIT + file LICENSE
 Depends: 
   R (>= 3.5.0),

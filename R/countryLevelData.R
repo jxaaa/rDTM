@@ -1,16 +1,18 @@
 #' Global IDP Data Country Level
+#' @description
+#' This level will return information aggregated at country level to provide a broad snapshot of displacement dynamics.(https://dtm.iom.int/data-and-analysis/dtm-api)
 #'
 #' @param operation String, specifying the operation to perform.
 #' @param countryName String, specifying the name of country.
-#' @param admin0Pcode String, specifying the ISO Country Code.admin0Pcode must be 3 characters.
+#' @param admin0Pcode String, specifying the Country code ( ISO 3166-1 alpha-3). Must provide either the countryName or the admin0Pcode, not both.
 #' @param fromDate String, specifying the start date of the reporting period (format: "yyyy-mm-dd"), optional.
 #' @param toDate String, specifying the start date of the reporting period (format: "yyyy-mm-dd"), optional.
 #' @param monthFrom_month String, specifying the start month of the reporting period. Between 1 and 12.
 #' @param monthFrom_year Integer, specifying the start year of the reporting period. Year must be 4 digit.
 #' @param monthTo_month Integer, specifying the end month of the reporting period. Between 1 and 12.
 #' @param monthTo_year Integer, specifying the end year of the reporting period. Year must be 4 digit.
-#' @param roundFrom Integer, specifying the start round number, optional. Not less than 0.
-#' @param roundTo Integer, specifying the end round number, optional. Not less than 0.
+#' @param roundFrom Integer, specifying the start Data collection round number, optional. Not less than 0.
+#' @param roundTo Integer, specifying the end Data collection round number, optional. Not less than 0.
 #' @param to_dataframe Boolean, Convert the response to a DataFrame, default to False, optional.
 #'
 #' @return A json file or dataframe.
@@ -19,11 +21,13 @@
 #' @export
 #'
 #' @examples
-#' #Retrieve the DTM data for Mongolia from Jan 2000 to Dec 2023, and convert output as dataframe.
-#' countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =TRUE)
+#' #Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to May 2024, and convert output as dataframe.
+#' countryLevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
 #'
-#' #Retrieve the DTM data for Mongolia from Jan 2000 to Dec 2023, and output as JSON.
-#' countryLevelData(countryName="Mongolia", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =TRUE)
+#' #Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to Dec 2023, and output as JSON.
+#' countryLevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =FALSE)
+
+
 countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "", fromDate = NULL, toDate = NULL,
                              monthFrom_month = NULL, monthFrom_year = NULL, monthTo_month = NULL,
                              monthTo_year = NULL, roundFrom = NULL, roundTo = NULL, to_dataframe = FALSE) {

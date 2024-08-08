@@ -1,4 +1,6 @@
 #' Global IDP Data at Admin 1 Level
+#' @description
+#' This level will return information aggregated at the administrative boundaries level 1, states, provinces and equivalent, still providing high-level information, but that drills down past country-level.(https://dtm.iom.int/data-and-analysis/dtm-api)
 #'
 #' @inheritParams countryLevelData
 #' @return A json file or dataframe.

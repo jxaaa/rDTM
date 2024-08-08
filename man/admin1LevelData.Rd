@@ -24,7 +24,7 @@ admin1LevelData(
 
 \item{countryName}{String, specifying the name of country.}
 
-\item{admin0Pcode}{String, specifying the ISO Country Code.}
+\item{admin0Pcode}{String, specifying the Country code ( ISO 3166-1 alpha-3). Must provide either the countryName or the admin0Pcode, not both.}
 
 \item{fromDate}{String, specifying the start date of the reporting period (format: "yyyy-mm-dd"), optional.}
 
@@ -38,9 +38,9 @@ admin1LevelData(
 
 \item{monthTo_year}{Integer, specifying the end year of the reporting period. Year must be 4 digit.}
 
-\item{roundFrom}{Integer, specifying the start round number, optional. Not less than 0.}
+\item{roundFrom}{Integer, specifying the start Data collection round number, optional. Not less than 0.}
 
-\item{roundTo}{Integer, specifying the end round number, optional. Not less than 0.}
+\item{roundTo}{Integer, specifying the end Data collection round number, optional. Not less than 0.}
 
 \item{to_dataframe}{Boolean, Convert the response to a DataFrame, default to False, optional.}
 }
@@ -48,7 +48,7 @@ admin1LevelData(
 A json file or dataframe.
 }
 \description{
-Global IDP Data at Admin 1 Level
+This level will return information aggregated at the administrative boundaries level 1, states, provinces and equivalent, still providing high-level information, but that drills down past country-level.(https://dtm.iom.int/data-and-analysis/dtm-api)
 }
 \examples{
 admin1LevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023, to_dataframe = TRUE)

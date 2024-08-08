@@ -1,4 +1,6 @@
 #' Global IDP Data at Admin 2 Level
+#' @description
+#' This level will return information aggregated at the administrative boundaries level 2, the lowest level available on the API, to provide information on smaller administrative areas than states, provinces and equivalent.(https://dtm.iom.int/data-and-analysis/dtm-api)
 #'
 #' @inheritParams countryLevelData
 #' @return A json file or dataframe.

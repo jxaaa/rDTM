@@ -24,7 +24,7 @@ countryLevelData(
 
 \item{countryName}{String, specifying the name of country.}
 
-\item{admin0Pcode}{String, specifying the ISO Country Code.}
+\item{admin0Pcode}{String, specifying the Country code ( ISO 3166-1 alpha-3). Must provide either the countryName or the admin0Pcode, not both.}
 
 \item{fromDate}{String, specifying the start date of the reporting period (format: "yyyy-mm-dd"), optional.}
 
@@ -38,9 +38,9 @@ countryLevelData(
 
 \item{monthTo_year}{Integer, specifying the end year of the reporting period. Year must be 4 digit.}
 
-\item{roundFrom}{Integer, specifying the start round number, optional. Not less than 0.}
+\item{roundFrom}{Integer, specifying the start Data collection round number, optional. Not less than 0.}
 
-\item{roundTo}{Integer, specifying the end round number, optional. Not less than 0.}
+\item{roundTo}{Integer, specifying the end Data collection round number, optional. Not less than 0.}
 
 \item{to_dataframe}{Boolean, Convert the response to a DataFrame, default to False, optional.}
 }
@@ -48,8 +48,12 @@ countryLevelData(
 A json file or dataframe.
 }
 \description{
-Global IDP Data Country Level
+This level will return information aggregated at country level to provide a broad snapshot of displacement dynamics.(https://dtm.iom.int/data-and-analysis/dtm-api)
 }
 \examples{
-countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =TRUE)
+#Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to May 2024, and convert output as dataframe.
+countryLevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+
+#Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to Dec 2023, and output as JSON.
+countryLevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =FALSE)
 }
