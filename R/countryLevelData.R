@@ -2,7 +2,7 @@
 #'
 #' @param operation String, specifying the operation to perform.
 #' @param countryName String, specifying the name of country.
-#' @param admin0Pcode String, specifying the ISO Country Code.
+#' @param admin0Pcode String, specifying the ISO Country Code.admin0Pcode must be 3 characters.
 #' @param fromDate String, specifying the start date of the reporting period (format: "yyyy-mm-dd"), optional.
 #' @param toDate String, specifying the start date of the reporting period (format: "yyyy-mm-dd"), optional.
 #' @param monthFrom_month String, specifying the start month of the reporting period. Between 1 and 12.
@@ -19,7 +19,11 @@
 #' @export
 #'
 #' @examples
+#' #Retrieve the DTM data for Mongolia from Jan 2000 to Dec 2023, and convert output as dataframe.
 #' countryLevelData(admin0Pcode="MNG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =TRUE)
+#'
+#' #Retrieve the DTM data for Mongolia from Jan 2000 to Dec 2023, and output as JSON.
+#' countryLevelData(countryName="Mongolia", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =TRUE)
 countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "", fromDate = NULL, toDate = NULL,
                              monthFrom_month = NULL, monthFrom_year = NULL, monthTo_month = NULL,
                              monthTo_year = NULL, roundFrom = NULL, roundTo = NULL, to_dataframe = FALSE) {
