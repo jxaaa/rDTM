@@ -1,0 +1,42 @@
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+# rDTM
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of rDTM is to provide a easy way to get the data from [IOM’s
+Displacement Tracking Matrix (DTM)
+API](https://dtm.iom.int/data-and-analysis/dtm-api).This API allows the
+humanitarian community, academia, media, government, and
+non-governmental organizations to utilize the data collected by DTM. The
+DTM API only provides non-sensitive IDP figures, aggregated at the
+country, Admin 1 (states, provinces, or equivalent), and Admin 2
+(smaller subnational administrative areas) levels.
+
+## Installation
+
+You can install the development version of rDTM from
+[GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("jxaaa/rDTM")
+```
+
+## Example
+
+This is a basic example which shows you how to solve a common problem:
+
+``` r
+library(rDTM)
+#Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to May 2024, and convert output as Dataframe.
+result <- countryLevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+
+#Retrieve the Global IDP Data at Admin 1 Level for Afghanistan from Jan 2000 to May 2024, and convert output as Dataframe.
+result <- admin1LevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+
+#Retrieve the Global IDP Data at Admin 2 Level for Afghanistan from Jan 2000 to May 2024, and convert output as Dataframe.
+result <- admin2LevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+```

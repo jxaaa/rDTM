@@ -28,13 +28,13 @@ admin2LevelData <- function(operation = "", countryName = "", admin0Pcode = "", 
   if (is.null(monthFrom_month) | !is.character(monthFrom_month)) {
     stop("Please provide the start month of the reporting period (str)")
   }
-  if (is.null(monthFrom_year) | !is.integer(monthFrom_year)) {
+  if (is.null(monthFrom_year) | !is.numeric(monthFrom_year)) {
     stop("Please provide the start year of the reporting period (int)")
   }
   if (is.null(monthTo_month) | !is.character(monthTo_month)) {
     stop("Please provide the end month of the reporting period (str)")
   }
-  if (is.null(monthTo_year) | !is.integer(monthTo_year)) {
+  if (is.null(monthTo_year) | !is.numeric(monthTo_year)) {
     stop("Please provide the end year of the reporting period (int)")
   }
   # The URL for getting admin0 data
