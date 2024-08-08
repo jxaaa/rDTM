@@ -1,5 +1,5 @@
 Package: rDTM
-Title: A package retrieving data from IOM's DTM API
+Title: R package retrieving data from IOM's DTM API
 Version: 1.0.0.0000
 Authors@R: 
     person("Xian", "Ji", , "xian.ji@un.org", role = c("aut", "cre"))
