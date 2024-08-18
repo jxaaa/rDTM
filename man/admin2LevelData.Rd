@@ -52,7 +52,7 @@ This level will return information aggregated at the administrative boundaries l
 }
 \examples{
 #Retrieve the Global IDP Data at Admin 2 Level for Afghanistan from Jan 2000 to May 2024, and convert output as dataframe.
-result1 <- admin2LevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+result1 <- admin2LevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
 
 #Retrieve the Global IDP Data at Admin 2 Level for Afghanistan from Jan 2000 to Dec 2023, and output as JSON.
 result2 <- admin2LevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =FALSE)

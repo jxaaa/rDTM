@@ -22,7 +22,7 @@
 #'
 #' @examples
 #' #Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to May 2024, and convert output as dataframe.
-#' result1 <- countryLevelData(admin0Pcode="AFG", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
+#' result1 <- countryLevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "5", monthTo_year=2024,to_dataframe =TRUE)
 #'
 #' #Retrieve the Global IDP Data Country Level for Afghanistan from Jan 2000 to Dec 2023, and output as JSON.
 #' result2 <- countryLevelData(countryName="Afghanistan", monthFrom_month= "1", monthFrom_year=2000, monthTo_month= "12", monthTo_year=2023,to_dataframe =FALSE)
@@ -50,7 +50,7 @@ countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "",
   if (is.null(monthTo_year) | !is.numeric(monthTo_year)) {
     stop("Please provide the end year of the reporting period (int)")
   }
-  # The URL for getting admin0 data
+  # The URL for getting admin data
   url <- "https://dtmapi.iom.int/api/IdpAdmin0Data/GetAdmin0Data"
   # The request body
   payload <- list(
@@ -77,7 +77,7 @@ countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "",
     )
   )
 
-  payload_json <- toJSON(payload)
+  payload_json <- toJSON(payload, auto_unbox = TRUE, null = "null")
 
   response <- POST(url,
                    body = payload_json,
