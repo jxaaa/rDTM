@@ -83,7 +83,7 @@ countryLevelData <- function(operation = "", countryName = "", admin0Pcode = "",
                    body = payload_json,
                    encode = "json",
                    content_type_json())
-  response_content <- content(response, as = "text")
+  response_content <- content(response, as = "text", encoding = "UTF-8")
   response_json <- fromJSON(response_content)
 
 
