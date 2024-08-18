@@ -64,7 +64,7 @@ admin1LevelData <- function(operation = "", countryName = "", admin0Pcode = "", 
     )
   )
 
-  payload_json <- toJSON(payload, auto_unbox = TRUE, null = "null")
+  payload_json <- toJSON(payload)
 
   response <- POST(url,
                    body = payload_json,
